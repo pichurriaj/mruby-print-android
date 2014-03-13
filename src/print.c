@@ -8,8 +8,7 @@ anroid_printstr(mrb_state *mrb, mrb_value obj)
   struct RString *str;
 
   if (mrb_string_p(obj)) {
-    str = mrb_str_ptr(obj);
-    __android_log_write(ANDROID_LOG_INFO, "MRuby", RSTRING_PTR(str));
+    __android_log_write(ANDROID_LOG_INFO, "MRuby", RSTRING_PTR(obj));
   }
 }
 
