@@ -6,12 +6,10 @@ static void
 anroid_printstr(mrb_state *mrb, mrb_value obj)
 {
   struct RString *str;
-  char *s;
 
   if (mrb_string_p(obj)) {
     str = mrb_str_ptr(obj);
-    s = str->ptr;
-    __android_log_write(ANDROID_LOG_INFO, "MRuby", str->ptr);
+    __android_log_write(ANDROID_LOG_INFO, "MRuby", RSTRING_PTR(str));
   }
 }
 
